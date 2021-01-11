@@ -32,3 +32,10 @@ Feature: Check difference in strands
     And second strand is AAA
     When the distance is calculated
     Then ValueError should be raised
+
+
+  Scenario: Second strand is longer than first raises ValueError
+    Given first strand is AC
+    And second strand is GTCC
+    When the distance is calculated
+    Then ValueError should be raised

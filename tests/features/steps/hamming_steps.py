@@ -59,6 +59,7 @@ def step_impl(context):
 def step_impl(context):
     context.second = "TGC"
 
+
 @then("the distance should be 2")
 def step_impl(context):
     assert_that(context.result).is_equal_to(2)
@@ -73,6 +74,17 @@ def step_impl(context):
 def step_impl(context):
     context.second = "AAA"
 
+
 @then("ValueError should be raised")
 def step_impl(context):
     assert_that(context.exc).is_instance_of(ValueError)
+
+
+@given("first strand is AC")
+def step_impl(context):
+    context.first = "AC"
+
+
+@step("second strand is GTCC")
+def step_impl(context):
+    context.second = "GTCC"
