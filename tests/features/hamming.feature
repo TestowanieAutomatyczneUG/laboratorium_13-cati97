@@ -52,3 +52,9 @@ Feature: Check difference in strands
     And second strand is empty
     When the distance is calculated
     Then ValueError should be raised
+
+  Scenario: Two long strands GGACGGATTCTG and AGGACGGATTCT have distance 9
+    Given first strand is GGACGGATTCTG
+    And second strand is AGGACGGATTCT
+    When the distance is calculated
+    Then the distance should be 9

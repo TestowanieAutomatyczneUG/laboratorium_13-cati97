@@ -88,3 +88,18 @@ def step_impl(context):
 @step("second strand is GTCC")
 def step_impl(context):
     context.second = "GTCC"
+
+
+@given("first strand is GGACGGATTCTG")
+def step_impl(context):
+    context.first = "GGACGGATTCTG"
+
+
+@step("second strand is AGGACGGATTCT")
+def step_impl(context):
+    context.second = "AGGACGGATTCT"
+
+
+@then("the distance should be 9")
+def step_impl(context):
+    assert_that(context.result).is_equal_to(9)
