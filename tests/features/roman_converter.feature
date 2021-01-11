@@ -11,8 +11,12 @@ Feature: Convert Number to Roman Numeral
     When the roman numeral is generated
     Then roman numeral should be XXIV
 
-
   Scenario: Convert 163 to CLXIII
     Given a decimal number equal to 163
     When the roman numeral is generated
     Then roman numeral should be CLXIII
+
+  Scenario: Convert 402 to CDII
+    Given a decimal number equal to 402
+    When the roman numeral is generated
+    Then roman numeral should be CDII
