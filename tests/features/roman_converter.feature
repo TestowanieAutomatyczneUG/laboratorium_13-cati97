@@ -25,3 +25,8 @@ Feature: Convert Number to Roman Numeral
     Given a decimal number equal to 911
     When the roman numeral is generated
     Then roman numeral should be CMXI
+
+  Scenario: Convert 3000 to MMM
+    Given a decimal number equal to 3000
+    When the roman numeral is generated
+    Then roman numeral should be MMM

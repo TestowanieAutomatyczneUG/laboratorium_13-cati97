@@ -56,3 +56,13 @@ def step_impl(context):
 @then("roman numeral should be CMXI")
 def step_impl(context):
     assert_that(context.roman_numeral).is_equal_to("CMXI")
+
+
+@given("a decimal number equal to 3000")
+def step_impl(context):
+    context.decimal = 3000
+
+
+@then("roman numeral should be MMM")
+def step_impl(context):
+    assert_that(context.roman_numeral).is_equal_to("MMM")
