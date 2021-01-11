@@ -12,3 +12,10 @@ Feature: Check difference in strands
     And second strand is A
     When the distance is calculated
     Then the distance should be 0
+
+
+  Scenario: Two different strands G and T have distance 1
+    Given first strand is G
+    And second strand is T
+    When the distance is calculated
+    Then the distance should be 1

@@ -31,3 +31,17 @@ def step_impl(context):
 @step("second strand is A")
 def step_impl(context):
     context.second = "A"
+
+
+@given("first strand is G")
+def step_impl(context):
+    context.first = "G"
+
+
+@step("second strand is T")
+def step_impl(context):
+    context.second = "T"
+
+@then("the distance should be 1")
+def step_impl(context):
+    assert_that(context.result).is_equal_to(1)
