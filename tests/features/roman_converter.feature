@@ -20,3 +20,8 @@ Feature: Convert Number to Roman Numeral
     Given a decimal number equal to 402
     When the roman numeral is generated
     Then roman numeral should be CDII
+
+  Scenario: Convert 911 to CMXI
+    Given a decimal number equal to 911
+    When the roman numeral is generated
+    Then roman numeral should be CMXI
