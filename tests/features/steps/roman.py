@@ -16,3 +16,13 @@ def step_impl(context):
 @then("roman numeral should be V")
 def step_impl(context):
     assert_that(context.roman_numeral).is_equal_to("V")
+
+
+@given("a decimal number equal to 24")
+def step_impl(context):
+    context.decimal = 24
+
+
+@then("roman numeral should be XXIV")
+def step_impl(context):
+    assert_that(context.roman_numeral).is_equal_to("XXIV")

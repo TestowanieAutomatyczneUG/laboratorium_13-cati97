@@ -5,3 +5,8 @@ Feature: Convert Number to Roman Numeral
     Given a decimal number equal to 5
     When the roman numeral is generated
     Then roman numeral should be V
+
+  Scenario: Convert 24 to XXIV
+    Given a decimal number equal to 24
+    When the roman numeral is generated
+    Then roman numeral should be XXIV
