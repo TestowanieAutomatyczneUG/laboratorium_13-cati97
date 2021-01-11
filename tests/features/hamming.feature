@@ -6,3 +6,9 @@ Feature: Check difference in strands
     And second strand is empty
     When the distance is calculated
     Then the distance should be 0
+
+  Scenario: Two identical strands have distance 0
+    Given first strand is A
+    And second strand is A
+    When the distance is calculated
+    Then the distance should be 0

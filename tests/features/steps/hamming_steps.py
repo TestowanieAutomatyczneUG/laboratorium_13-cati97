@@ -21,3 +21,13 @@ def step_impl(context):
 @then("the distance should be 0")
 def step_impl(context):
     assert_that(context.result).is_equal_to(0)
+
+
+@given("first strand is A")
+def step_impl(context):
+    context.first = "A"
+
+
+@step("second strand is A")
+def step_impl(context):
+    context.second = "A"
