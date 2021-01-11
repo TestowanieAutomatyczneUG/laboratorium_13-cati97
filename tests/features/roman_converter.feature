@@ -10,3 +10,9 @@ Feature: Convert Number to Roman Numeral
     Given a decimal number equal to 24
     When the roman numeral is generated
     Then roman numeral should be XXIV
+
+
+  Scenario: Convert 163 to CLXIII
+    Given a decimal number equal to 163
+    When the roman numeral is generated
+    Then roman numeral should be CLXIII
