@@ -46,3 +46,9 @@ Feature: Check difference in strands
     And second strand is GTCC
     When the distance is calculated
     Then ValueError should be raised
+
+  Scenario: Second strand empty raises ValueError
+    Given first strand is AC
+    And second strand is empty
+    When the distance is calculated
+    Then ValueError should be raised
