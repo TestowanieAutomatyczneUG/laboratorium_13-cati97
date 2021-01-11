@@ -25,3 +25,10 @@ Feature: Check difference in strands
     And second strand is TGC
     When the distance is calculated
     Then the distance should be 2
+
+
+  Scenario: First strand is longer than second raises ValueError
+    Given first strand is AATG
+    And second strand is AAA
+    When the distance is calculated
+    Then ValueError should be raised

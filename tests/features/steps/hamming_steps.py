@@ -15,7 +15,10 @@ def step_impl(context):
 
 @when("the distance is calculated")
 def step_impl(context):
-    context.result = context.hamming.distance(context.first, context.second)
+    try:
+        context.result = context.hamming.distance(context.first, context.second)
+    except ValueError as e:
+        context.exc = e
 
 
 @then("the distance should be 0")
@@ -59,3 +62,17 @@ def step_impl(context):
 @then("the distance should be 2")
 def step_impl(context):
     assert_that(context.result).is_equal_to(2)
+
+
+@given("first strand is AATG")
+def step_impl(context):
+    context.first = "AATG"
+
+
+@step("second strand is AAA")
+def step_impl(context):
+    context.second = "AAA"
+
+@then("ValueError should be raised")
+def step_impl(context):
+    assert_that(context.exc).is_instance_of(ValueError)
