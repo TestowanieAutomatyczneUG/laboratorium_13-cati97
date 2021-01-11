@@ -19,3 +19,9 @@ Feature: Check difference in strands
     And second strand is T
     When the distance is calculated
     Then the distance should be 1
+
+  Scenario: Two different strands AGT and TGC have distance 2
+    Given first strand is AGT
+    And second strand is TGC
+    When the distance is calculated
+    Then the distance should be 2

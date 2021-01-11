@@ -45,3 +45,17 @@ def step_impl(context):
 @then("the distance should be 1")
 def step_impl(context):
     assert_that(context.result).is_equal_to(1)
+
+
+@given("first strand is AGT")
+def step_impl(context):
+    context.first = "AGT"
+
+
+@step("second strand is TGC")
+def step_impl(context):
+    context.second = "TGC"
+
+@then("the distance should be 2")
+def step_impl(context):
+    assert_that(context.result).is_equal_to(2)
