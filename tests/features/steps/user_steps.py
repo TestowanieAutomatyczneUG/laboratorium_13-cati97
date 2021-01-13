@@ -21,10 +21,18 @@ def step_impl(context, email):
     context.user.email = email
 
 
+@step(u'the user wants to create prop phone as "{phone}"')
+def step_impl(context, phone):
+    context.user.phone = int(phone)
+
+
 @when("get_firstname is run")
 def step_impl(context):
     context.result = context.user.get_firstname()
 
+@when("check_phone_is_int is run")
+def step_impl(context):
+    context.result = context.user.check_phone_is_int()
 
 @when("get_lastname is run")
 def step_impl(context):
@@ -43,4 +51,4 @@ def step_impl(context):
 
 @then(u'you should receive "{result}"')
 def step_impl(context, result):
-    assert_that(context.result).is_equal_to(result)
+    assert_that(str(context.result)).is_equal_to(result)

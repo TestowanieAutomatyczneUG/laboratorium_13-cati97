@@ -23,3 +23,9 @@ class User:
         else:
             return "Correct"
 
+    def check_phone_is_int(self):
+        if type(self.phone) is int:
+            return True
+        else:
+            return False
+
