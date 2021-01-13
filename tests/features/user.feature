@@ -23,3 +23,11 @@ Feature: Create a user in go rest database
     And the user wants to create prop email as "kowalska@example.com"
     When check_email_is_correct is run
     Then you should receive "Correct"
+
+
+  Scenario: Check email is correct returns Incorrect
+    Given the user wants to create prop first name as "Joanna"
+    And the user wants to create prop last name as "Kowalska"
+    And the user wants to create prop email as "k2exampleom"
+    When check_email_is_correct is run
+    Then you should receive "Incorrect"
