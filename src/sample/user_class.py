@@ -29,3 +29,8 @@ class User:
         else:
             return False
 
+    def check_user_id_is_length_four(self):
+        if len(self.user_id) == 4:
+            return True
+        else:
+            return False

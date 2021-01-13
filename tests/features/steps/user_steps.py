@@ -16,6 +16,11 @@ def step_impl(context, last_name):
     context.user.lastname = last_name
 
 
+@step(u'the user wants to create prop user_id as "{user_id}"')
+def step_impl(context, user_id):
+    context.user.user_id = user_id
+
+
 @step(u'the user wants to create prop email as "{email}"')
 def step_impl(context, email):
     context.user.email = email
@@ -33,6 +38,11 @@ def step_impl(context):
 @when("check_phone_is_int is run")
 def step_impl(context):
     context.result = context.user.check_phone_is_int()
+
+@when("check_user_id_is_length_four is run")
+def step_impl(context):
+    context.result = context.user.check_user_id_is_length_four()
+
 
 @when("get_lastname is run")
 def step_impl(context):
