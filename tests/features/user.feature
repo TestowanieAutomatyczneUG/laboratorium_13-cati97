@@ -46,3 +46,11 @@ Feature: Create a user in go rest database
     And the user wants to create prop user_id as "1234"
     When check_user_id_is_length_four is run
     Then you should receive "True"
+
+  Scenario: Check phone is int returns False
+    Given the user wants to create prop first name as "Joanna"
+    And the user wants to create prop last name as "Kowalska"
+    And the user wants to create prop phone as "899555666"
+    And the user wants to create prop user_id as "34"
+    When check_user_id_is_length_four is run
+    Then you should receive "False"
