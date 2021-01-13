@@ -11,3 +11,6 @@ class User:
 
     def get_lastname(self):
         return self.lastname
+
+    def create_fullname(self, firstname, lastname):
+        return f"{firstname} {lastname}"
