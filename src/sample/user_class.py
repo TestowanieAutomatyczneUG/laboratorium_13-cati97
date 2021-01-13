@@ -8,3 +8,6 @@ class User:
 
     def get_firstname(self):
         return self.firstname
+
+    def get_lastname(self):
+        return self.lastname

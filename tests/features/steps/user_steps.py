@@ -21,6 +21,11 @@ def step_impl(context):
     context.result = context.user.get_firstname()
 
 
+@when("get_lastname is run")
+def step_impl(context):
+    context.result = context.user.get_lastname()
+
+
 @then(u'you should receive "{result}"')
 def step_impl(context, result):
     assert_that(context.result).is_equal_to(result)
