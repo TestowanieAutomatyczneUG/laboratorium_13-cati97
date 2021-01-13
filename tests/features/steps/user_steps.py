@@ -16,6 +16,11 @@ def step_impl(context, last_name):
     context.user.lastname = last_name
 
 
+@step(u'the user wants to create prop email as "{email}"')
+def step_impl(context, email):
+    context.user.email = email
+
+
 @when("get_firstname is run")
 def step_impl(context):
     context.result = context.user.get_firstname()
@@ -24,6 +29,11 @@ def step_impl(context):
 @when("get_lastname is run")
 def step_impl(context):
     context.result = context.user.get_lastname()
+
+
+@when("check_email_is_correct is run")
+def step_impl(context):
+    context.result = context.user.check_email_is_correct()
 
 
 @when("create_fullname is run")

@@ -1,3 +1,5 @@
+import re
+
 class User:
     def __init__(self, user_id="", firstname="", lastname="", phone="", email=""):
         self.user_id = user_id
@@ -14,3 +16,10 @@ class User:
 
     def create_fullname(self, firstname, lastname):
         return f"{firstname} {lastname}"
+
+    def check_email_is_correct(self):
+        if not re.match(r"^[A-Za-z0-9.+_-]+@[A-Za-z0-9._-]+\.[a-zA-Z]*$", self.email):
+            return "Incorrect"
+        else:
+            return "Correct"
+
